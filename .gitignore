@@ -1,0 +1,23 @@
+# Local tools and dataset downloads used to verify this project.
+# Project-level rules live in product_review_sentiment-main/.gitignore.
+/.verification-env/
+/.verification-cache/
+/verification/
+
+# Local Python environments, caches, logs, and credentials
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.cache/
+.ipynb_checkpoints/
+*.log
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Operating-system files and temporary Office locks
+.DS_Store
+Thumbs.db
+~$*
