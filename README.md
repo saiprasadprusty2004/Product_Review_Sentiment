@@ -39,7 +39,20 @@ The first run downloads public training shards unless cached; `--shard-dir PATH`
 
 ## Jupyter Notebook
 
-Install and launch Jupyter in the same environment:
+The entire project is [DL_Project_Complete.ipynb](DL_Project_Complete.ipynb) in the repository root. This single file contains the actual 20,000 reviews, original splits, all preprocessing/model/training/evaluation code, all six trained candidates' inference weights, live predictions, 14 visualization figures, and 41 embedded original source/test/report files. No companion project files or separate CSV/model/image outputs are needed. The notebook is approximately 102 MB because it includes the trained weights.
+
+From the repository root, launch it in the existing environment:
+
+```powershell
+& '.\.verification-env\Scripts\python.exe' -m pip install tensorflow numpy pandas scipy scikit-learn matplotlib psutil notebook ipykernel
+& '.\.verification-env\Scripts\python.exe' -m notebook DL_Project_Complete.ipynb
+```
+
+Choose **Run → Run All Cells**. The default `MODE = "saved"` restores the included trained models, recomputes test predictions, and runs predictions for new reviews without downloading data or retraining. Set `MODE = "train"` to retrain all six candidates in memory. Tables, features, weights, results, and charts stay in memory or notebook outputs; no output folders are created. Save the notebook to retain the displayed results and figures in this same file. Required Python package setup is inside the notebook.
+
+The notebook includes integrity and consistency checks for its embedded data/models, disjoint splits, sparse batches, validation-only selection, and evaluation metrics.
+
+The earlier script-based notebook remains available. To run it, install and launch Jupyter in the project environment:
 
 ```powershell
 & '.\.venv\Scripts\python.exe' -m pip install notebook ipykernel
@@ -85,8 +98,11 @@ Verified: **9 regression tests**, **38 independent real-result checks**, and **a
 
 ## Project files and reports
 
+The final research paper uses a **two-column layout** and contains **exactly nine pages of main content** (pages 3–11), plus cover, index, references, and contribution statement: **13 pages total**, with eight vector figures and six tables. [Research paper PDF](product_review_sentiment-main/report/ICT4442_Team5_Research_Paper.pdf) · [Editable LaTeX source](product_review_sentiment-main/report/ICT4442_Team5_LaTeX_Source.zip).
+
 - [Source code](product_review_sentiment-main/src/) and [regression tests](product_review_sentiment-main/tests/).
-- [Executed notebook](product_review_sentiment-main/notebook/DL_Phase2_Sentiment_Pipeline_EXECUTED.ipynb).
+- [Complete standalone notebook with visualizations](DL_Project_Complete.ipynb).
+- [Earlier script-based notebook](product_review_sentiment-main/notebook/DL_Phase2_Sentiment_Pipeline_EXECUTED.ipynb).
 - [Phase 1 synopsis](ICT4442_Synopsis_Phase1.docx).
 - [Phase 2 interim report](product_review_sentiment-main/report/ICT4442_Team5_Phase2_Interim_Report.docx).
 - [Phase 3 final report](ICT4442_Team5_Phase3_Final_Report_completed.docx).

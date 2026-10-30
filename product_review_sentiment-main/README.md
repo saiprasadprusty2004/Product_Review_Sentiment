@@ -38,6 +38,10 @@ In the existing DL Project workspace, use `..\.verification-env\Scripts\python.e
 
 ## Jupyter Notebook
 
+The entire project is in [DL_Project_Complete.ipynb](../DL_Project_Complete.ipynb), one folder above this project. It contains the real 20,000-review dataset, all model/training/evaluation code, all six trained candidates' inference weights, 14 visualization figures, and 41 original source/test/report attachments. Run all cells with `MODE = "saved"` to restore the included models, recompute test results, and predict new reviews; `MODE = "train"` retrains in memory. It uses no companion project files and creates no separate CSV/model/image files. Required Python packages and setup instructions are inside the notebook.
+
+The original script-based notebook is also retained:
+
 Install and launch Jupyter in the same environment:
 
 ```powershell
